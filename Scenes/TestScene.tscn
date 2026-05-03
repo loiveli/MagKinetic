@@ -67,6 +67,7 @@ texture = ExtResource("1_b5ayd")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=449659715]
 
 [node name="MagnetismMarker" type="AnimatedSprite2D" parent="." unique_id=841880760]
+visible = false
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_6xh1p")
 frame_progress = 0.6450763
