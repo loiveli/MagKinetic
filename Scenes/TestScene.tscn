@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://0w4ipyoendkh"]
+
+[ext_resource type="Script" uid="uid://c0ta8rfphd4yj" path="res://Scenes/throwable_box.gd" id="1_5lt6y"]
+[ext_resource type="Texture2D" uid="uid://bwcr54c7gy5yn" path="res://kenney_pixel-platformer/Tiles/tile_0026.png" id="1_b5ayd"]
+[ext_resource type="Texture2D" uid="uid://b6hmkxsks7ph3" path="res://Pixel Art Skill Animations - Lightning/VFX1/Sprite-sheet/Sprite-sheet.png" id="3_8k7wh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5lt6y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iufkg"]
+atlas = ExtResource("3_8k7wh")
+region = Rect2(0, 0, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0f5h7"]
+atlas = ExtResource("3_8k7wh")
+region = Rect2(256, 0, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qsjrb"]
+atlas = ExtResource("3_8k7wh")
+region = Rect2(512, 0, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c264a"]
+atlas = ExtResource("3_8k7wh")
+region = Rect2(768, 0, 256, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6xh1p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iufkg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0f5h7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qsjrb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c264a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=1847097734]
+
+[node name="ThrowableBox" type="RigidBody2D" parent="." unique_id=1101169480 node_paths=PackedStringArray("magnetism_marker")]
+input_pickable = true
+gravity_scale = 0.0
+script = ExtResource("1_5lt6y")
+magnetism_marker = NodePath("../MagnetismMarker")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="ThrowableBox" unique_id=1087740383]
+shape = SubResource("RectangleShape2D_5lt6y")
+
+[node name="Sprite2D" type="Sprite2D" parent="ThrowableBox" unique_id=1589388754]
+texture = ExtResource("1_b5ayd")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=449659715]
+
+[node name="MagnetismMarker" type="AnimatedSprite2D" parent="." unique_id=841880760]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_6xh1p")
+frame_progress = 0.6450763
+centered = false
+offset = Vector2(0, -64)
+flip_h = true
