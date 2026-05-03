@@ -31,6 +31,11 @@ func _process(delta: float) -> void:
 		force_vector = drag_vector.normalized() * min(drag_vector.length(), max_force)
 	if drag_vector.length() > 0 and Input.is_action_just_released("space"):
 		release_force(force_vector)
+	if Input.is_action_just_pressed("reset"):
+		position = Vector2(0, 0)
+		linear_velocity = Vector2(0, 0)
+		angular_velocity = 0
+
 
 
 func release_force(force_vector: Vector2) -> void:
