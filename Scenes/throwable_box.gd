@@ -12,12 +12,13 @@ var reset:bool = false
 func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		print("Box clicked")
+		magnetism_marker.visible = true
 		dragging = true
 		drag_start = get_global_mouse_position()
 
 
 func _process(delta: float) -> void:
-	magnetism_marker.visible = dragging
+	
 	if dragging:
 		var current_mouse_pos = get_global_mouse_position()
 		var mouse_vector = current_mouse_pos - drag_start
@@ -32,8 +33,9 @@ func _process(delta: float) -> void:
 		force_vector = drag_vector.normalized() * min(drag_vector.length(), max_force)
 	if drag_vector.length() > 0 and Input.is_action_just_released("space"):
 		release_force(force_vector)
+		magnetism_marker.visible = false
 	if Input.is_action_just_pressed("reset"):
-		
+		magnetism_marker.visible = false
 		reset = true
 	
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
