@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://0w4ipyoendkh"]
 
-[ext_resource type="Script" uid="uid://c0ta8rfphd4yj" path="res://Scenes/throwable_box.gd" id="1_5lt6y"]
+[ext_resource type="Script" uid="uid://c0ta8rfphd4yj" path="res://Scripts/throwable_box.gd" id="1_5lt6y"]
 [ext_resource type="Texture2D" uid="uid://bwcr54c7gy5yn" path="res://kenney_pixel-platformer/Tiles/tile_0026.png" id="1_b5ayd"]
 [ext_resource type="Texture2D" uid="uid://b6hmkxsks7ph3" path="res://Pixel Art Skill Animations - Lightning/VFX1/Sprite-sheet/Sprite-sheet.png" id="3_8k7wh"]
 [ext_resource type="Texture2D" uid="uid://bl3l8dvju61bg" path="res://kenney_pixel-platformer/Tiles/tile_0047.png" id="4_iufkg"]
